@@ -9,6 +9,7 @@ namespace SportsManagementSystem.Models
 {
     public class Competitor
     {
+        [Display(Name = "Competitor ID")]
         [Key]
         public int CompetitorId { get; set; }
         public string Salutation { get; set; }
@@ -23,9 +24,8 @@ namespace SportsManagementSystem.Models
         public string Description { get; set; }
         [Required] public string Country { get; set; }
         [Required] public string Gender { get; set; }
-        [Phone]
         [Display(Name = "Contact Number")]
-        public int ContactNo { get; set; }
+        public string ContactNo { get; set; }
 
         public string Website { get; set; }
         public string Photo { get; set; }

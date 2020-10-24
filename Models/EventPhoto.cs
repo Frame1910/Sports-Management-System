@@ -8,6 +8,7 @@ namespace SportsManagementSystem.Models
 {
     public class EventPhoto
     {
+        [Display(Name = "Photo ID")]
         [Key]
         public int PhotoId { get; set; }
         [Required]

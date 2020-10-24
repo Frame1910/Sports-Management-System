@@ -11,23 +11,23 @@ using SportsManagementSystem.Models;
 
 namespace SportsManagementSystem.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class CompetitorsController : Controller
+    [Authorize(Roles = "EventManager")]
+    public class EventsController : Controller
     {
         private readonly SportsDbContext _context;
 
-        public CompetitorsController(SportsDbContext context)
+        public EventsController(SportsDbContext context)
         {
             _context = context;
         }
 
-        // GET: Competitors
+        // GET: Events
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Competitors.ToListAsync());
+            return View(await _context.Events.ToListAsync());
         }
 
-        // GET: Competitors/Details/5
+        // GET: Events/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +35,39 @@ namespace SportsManagementSystem.Controllers
                 return NotFound();
             }
 
-            var competitor = await _context.Competitors
-                .FirstOrDefaultAsync(m => m.CompetitorId == id);
-            if (competitor == null)
+            var @event = await _context.Events
+                .FirstOrDefaultAsync(m => m.EventId == id);
+            if (@event == null)
             {
                 return NotFound();
             }
 
-            return View(competitor);
+            return View(@event);
         }
 
-        // GET: Competitors/Create
+        // GET: Events/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Competitors/Create
+        // POST: Events/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CompetitorId,Salutation,Name,Dob,Email,Description,Country,Gender,ContactNo,Website,Photo")] Competitor competitor)
+        public async Task<IActionResult> Create([Bind("EventId,FeatureEvent,Venue,Date,StartTime,EndTime,Description,WorldRecord,GameId")] Event @event)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(competitor);
+                _context.Add(@event);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(competitor);
+            return View(@event);
         }
 
-        // GET: Competitors/Edit/5
+        // GET: Events/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +75,22 @@ namespace SportsManagementSystem.Controllers
                 return NotFound();
             }
 
-            var competitor = await _context.Competitors.FindAsync(id);
-            if (competitor == null)
+            var @event = await _context.Events.FindAsync(id);
+            if (@event == null)
             {
                 return NotFound();
             }
-            return View(competitor);
+            return View(@event);
         }
 
-        // POST: Competitors/Edit/5
+        // POST: Events/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CompetitorId,Salutation,Name,Dob,Email,Description,Country,Gender,ContactNo,Website,Photo")] Competitor competitor)
+        public async Task<IActionResult> Edit(int id, [Bind("EventId,FeatureEvent,Venue,Date,StartTime,EndTime,Description,WorldRecord,GameId")] Event @event)
         {
-            if (id != competitor.CompetitorId)
+            if (id != @event.EventId)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace SportsManagementSystem.Controllers
             {
                 try
                 {
-                    _context.Update(competitor);
+                    _context.Update(@event);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CompetitorExists(competitor.CompetitorId))
+                    if (!EventExists(@event.EventId))
                     {
                         return NotFound();
                     }
@@ -115,10 +115,10 @@ namespace SportsManagementSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(competitor);
+            return View(@event);
         }
 
-        // GET: Competitors/Delete/5
+        // GET: Events/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +126,30 @@ namespace SportsManagementSystem.Controllers
                 return NotFound();
             }
 
-            var competitor = await _context.Competitors
-                .FirstOrDefaultAsync(m => m.CompetitorId == id);
-            if (competitor == null)
+            var @event = await _context.Events
+                .FirstOrDefaultAsync(m => m.EventId == id);
+            if (@event == null)
             {
                 return NotFound();
             }
 
-            return View(competitor);
+            return View(@event);
         }
 
-        // POST: Competitors/Delete/5
+        // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var competitor = await _context.Competitors.FindAsync(id);
-            _context.Competitors.Remove(competitor);
+            var @event = await _context.Events.FindAsync(id);
+            _context.Events.Remove(@event);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CompetitorExists(int id)
+        private bool EventExists(int id)
         {
-            return _context.Competitors.Any(e => e.CompetitorId == id);
+            return _context.Events.Any(e => e.EventId == id);
         }
     }
 }

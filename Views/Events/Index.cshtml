@@ -35,7 +35,7 @@
                 @Html.DisplayNameFor(model => model.WorldRecord)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.GameId)
+                @Html.DisplayNameFor(model => model.Game)
             </th>
             <th></th>
         </tr>
@@ -65,7 +65,7 @@
                 @Html.DisplayFor(modelItem => item.WorldRecord)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GameId)
+                @Html.DisplayFor(modelItem => item.Game.Code)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.EventId">Edit</a> |

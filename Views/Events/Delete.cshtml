@@ -55,11 +55,11 @@
             @Html.DisplayFor(model => model.WorldRecord)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GameId)
+            @Html.DisplayNameFor(model => model.Game)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GameId)
-        </dd>
+            @Html.DisplayFor(model => model.Game.Code)
+        </dd class>
     </dl>
     
     <form asp-action="Delete">

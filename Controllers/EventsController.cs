@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +10,6 @@ using SportsManagementSystem.Models;
 
 namespace SportsManagementSystem.Controllers
 {
-    [Authorize(Roles = "EventManager")]
     public class EventsController : Controller
     {
         private readonly SportsDbContext _context;
@@ -24,7 +22,8 @@ namespace SportsManagementSystem.Controllers
         // GET: Events
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Events.ToListAsync());
+            var sportsDbContext = _context.Events.Include(c => c.Game);
+            return View(await sportsDbContext.ToListAsync());
         }
 
         // GET: Events/Details/5
@@ -36,6 +35,7 @@ namespace SportsManagementSystem.Controllers
             }
 
             var @event = await _context.Events
+                .Include(c => c.Game)
                 .FirstOrDefaultAsync(m => m.EventId == id);
             if (@event == null)
             {
@@ -48,6 +48,7 @@ namespace SportsManagementSystem.Controllers
         // GET: Events/Create
         public IActionResult Create()
         {
+            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code");
             return View();
         }
 
@@ -64,6 +65,7 @@ namespace SportsManagementSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code", @event.GameId);
             return View(@event);
         }
 
@@ -80,6 +82,7 @@ namespace SportsManagementSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code", @event.GameId);
             return View(@event);
         }
 
@@ -115,6 +118,7 @@ namespace SportsManagementSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code", @event.GameId);
             return View(@event);
         }
 
@@ -127,6 +131,7 @@ namespace SportsManagementSystem.Controllers
             }
 
             var @event = await _context.Events
+                .Include(c => c.Game)
                 .FirstOrDefaultAsync(m => m.EventId == id);
             if (@event == null)
             {

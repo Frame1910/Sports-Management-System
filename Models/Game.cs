@@ -8,6 +8,7 @@ namespace SportsManagementSystem.Models
 {
     public class Game
     {
+        [Key]
         public int GameId { get; set; }
         [Required] public string Code { get; set; }
         [Required] public string Name { get; set; }

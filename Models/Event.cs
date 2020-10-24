@@ -8,6 +8,7 @@ namespace SportsManagementSystem.Models
 {
     public class Event
     {
+        [Key]
         public int EventId { get; set; }
         [Display(Name = "Featured Event")]
         public string FeatureEvent { get; set; }

@@ -9,6 +9,7 @@ namespace SportsManagementSystem.Models
 {
     public class Competitor
     {
+        [Key]
         public int CompetitorId { get; set; }
         public string Salutation { get; set; }
         [Required] public string Name { get; set; }

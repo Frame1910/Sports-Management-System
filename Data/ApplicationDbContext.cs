@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Razor.Language;
 using Microsoft.EntityFrameworkCore;
 using SportsManagementSystem.Models;
 
@@ -24,17 +25,43 @@ namespace SportsManagementSystem.Data
 
         public DbSet<Game> Games { get; set; }
         public DbSet<Competitor> Competitors { get; set; }
-        public DbSet<CompetitorGame> CompetitorGames { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<EventOutcome> EventOutcomes { get; set; }
         public DbSet<EventPhoto> EventPhotos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<CompetitorGame>()
-                .HasKey(c => new { c.CompetitorId, c.GameId });
             builder.Entity<EventOutcome>()
                 .HasKey(c => new { c.EventId, c.CompetitorId });
+            builder.Entity<Game>()
+                .HasData(
+                    new Game
+                    {
+                        GameId = 1,
+                        Code = "RUN1234",
+                        Name = "Running",
+                        DurationInHours = 4,
+                        Description = "Competitors run around a track ",
+                        RulesBooklet = "/Rules/RUN1234.pdf"
+                    },
+                    new Game
+                    {
+                        GameId = 2,
+                        Code = "CYC1234",
+                        Name = "Cycling",
+                        DurationInHours = 2,
+                        Description = "Competitors Cycle around a track",
+                        RulesBooklet = "/Rules/CYC1234.pdf"
+                    },
+                    new Game
+                    {
+                        GameId = 3,
+                        Code = "SWI1234",
+                        Name = "Swimming",
+                        DurationInHours = 1,
+                        Description = "Competitors do laps in a pool",
+                        RulesBooklet = "/Rules/SWI1234.pdf"
+                    });
 
             string[] names =
             {
@@ -69,7 +96,6 @@ namespace SportsManagementSystem.Data
                 "Rosalinda Gorrell",
                 "Tomasa Vendetti"
             };
-            string[] salutes = { "Mr", "Mrs", "Miss", "Mr", "Mrs", "Mrs", "Mrs", "Mrs", "Mr", "Mrs", "Mr", "Mrs", "Mr", "Mrs", "Mr", "Miss", "Mrs", "Miss", "Mr", "Mrs", "Mrs", "Mr", "Mrs", "Mrs", "Miss", "Mrs", "Miss", "Mrs", "Miss", "Miss" };
             string[] DOBs =
             {
                 "07/05/1980",
@@ -148,10 +174,43 @@ namespace SportsManagementSystem.Data
                 "Male", "Female", "Male", "Female", "Female", "Male", "Male", "Female", "Male", "Male", "Female", "Female", "Female", "Male", "Male", "Female", "Male", "Male", "Female", "Male", "Male", "Female", "Male",
                 "Male", "Female", "Female", "Male", "Female", "Male", "Male"
             };
+            Game[] gamesList =
+            {
+                new Game
+                {
+                    GameId = 1,
+                    Code = "RUN1234",
+                    Name = "Running",
+                    DurationInHours = 4,
+                    Description = "Competitors run around a track ",
+                    RulesBooklet = "/Rules/RUN1234.pdf"
+                },
+                new Game
+                {
+                    GameId = 2,
+                    Code = "CYC1234",
+                    Name = "Cycling",
+                    DurationInHours = 2,
+                    Description = "Competitors Cycle around a track",
+                    RulesBooklet = "/Rules/CYC1234.pdf"
+                },
+                new Game
+                {
+                    GameId = 3,
+                    Code = "SWI1234",
+                    Name = "Swimming",
+                    DurationInHours = 1,
+                    Description = "Competitors do laps in a pool",
+                    RulesBooklet = "/Rules/SWI1234.pdf"
+                }
+            };
+
+            Salutation[] salutes = {Salutation.Mr, Salutation.Mrs, Salutation.Miss};
+            Random rand = new Random();
+            
 
             for (int i = 0; i < names.Length; i++)
             {
-                Trace.WriteLine(i);
                 builder.Entity<Competitor>()
                     .HasData(
                         new Competitor
@@ -160,9 +219,10 @@ namespace SportsManagementSystem.Data
                             Name = names[i],
                             Country = Countries[i],
                             Dob = DateTime.Parse(DOBs[i]),
-                            Salutation = salutes[i],
+                            Salutation = salutes[rand.Next(0, 2)],
                             Email = Emails[i],
-                            Gender = Genders[i]
+                            Gender = Genders[i],
+                            Games = { }
                         });
             }
         }

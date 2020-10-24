@@ -10,8 +10,8 @@ using SportsManagementSystem.Data;
 namespace SportsManagementSystem.Migrations
 {
     [DbContext(typeof(SportsDbContext))]
-    [Migration("20201024150032_SeedData")]
-    partial class SeedData
+    [Migration("20201024173331_AddedComplexity")]
+    partial class AddedComplexity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,8 +56,8 @@ namespace SportsManagementSystem.Migrations
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Salutation")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Salutation")
+                        .HasColumnType("int");
 
                     b.Property<string>("Website")
                         .HasColumnType("nvarchar(max)");
@@ -75,7 +75,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "skajan@att.net",
                             Gender = "Male",
                             Name = "Jani Hosea",
-                            Salutation = "Mr"
+                            Salutation = 0
                         },
                         new
                         {
@@ -85,7 +85,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "lukka@msn.com",
                             Gender = "Female",
                             Name = "Petrina Bassi",
-                            Salutation = "Mrs"
+                            Salutation = 0
                         },
                         new
                         {
@@ -95,7 +95,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "majordick@live.com",
                             Gender = "Male",
                             Name = "Antione Yearta",
-                            Salutation = "Miss"
+                            Salutation = 0
                         },
                         new
                         {
@@ -105,7 +105,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "galbra@optonline.net",
                             Gender = "Female",
                             Name = "Ashton Tackett",
-                            Salutation = "Mr"
+                            Salutation = 1
                         },
                         new
                         {
@@ -115,7 +115,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "bflong@comcast.net",
                             Gender = "Female",
                             Name = "Latisha Skerrett",
-                            Salutation = "Mrs"
+                            Salutation = 0
                         },
                         new
                         {
@@ -125,7 +125,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "juliano@yahoo.com",
                             Gender = "Male",
                             Name = "Bernice Moorman",
-                            Salutation = "Mrs"
+                            Salutation = 0
                         },
                         new
                         {
@@ -135,7 +135,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "hmbrand@att.net",
                             Gender = "Male",
                             Name = "Chasity Wesolowski",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -145,7 +145,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "ninenine@msn.com",
                             Gender = "Female",
                             Name = "Mike Pautz",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -155,7 +155,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "oracle@verizon.net",
                             Gender = "Male",
                             Name = "Isela Spiegel",
-                            Salutation = "Mr"
+                            Salutation = 1
                         },
                         new
                         {
@@ -165,7 +165,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "hermanab@msn.com",
                             Gender = "Male",
                             Name = "Shizue Theiss",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -175,7 +175,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "tromey@gmail.com",
                             Gender = "Female",
                             Name = "Brandon Musgrove",
-                            Salutation = "Mr"
+                            Salutation = 0
                         },
                         new
                         {
@@ -185,7 +185,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "bogjobber@yahoo.com",
                             Gender = "Female",
                             Name = "Palmira Halbert",
-                            Salutation = "Mrs"
+                            Salutation = 0
                         },
                         new
                         {
@@ -195,7 +195,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "irving@optonline.net",
                             Gender = "Female",
                             Name = "Lewis Hohl",
-                            Salutation = "Mr"
+                            Salutation = 1
                         },
                         new
                         {
@@ -205,7 +205,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "cliffordj@mac.com",
                             Gender = "Male",
                             Name = "Dottie Hitchens",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -215,7 +215,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "dkasak@outlook.com",
                             Gender = "Male",
                             Name = "Kristine Guidry",
-                            Salutation = "Mr"
+                            Salutation = 1
                         },
                         new
                         {
@@ -225,7 +225,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "petersen@mac.com",
                             Gender = "Female",
                             Name = "Carita Schlegel",
-                            Salutation = "Miss"
+                            Salutation = 0
                         },
                         new
                         {
@@ -235,7 +235,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "wojciech@optonline.net",
                             Gender = "Male",
                             Name = "Mattie Tally",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -245,7 +245,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "odlyzko@comcast.net",
                             Gender = "Male",
                             Name = "Craig Kimpel",
-                            Salutation = "Miss"
+                            Salutation = 0
                         },
                         new
                         {
@@ -255,7 +255,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "retoh@gmail.com",
                             Gender = "Female",
                             Name = "Susy Mullett",
-                            Salutation = "Mr"
+                            Salutation = 0
                         },
                         new
                         {
@@ -265,7 +265,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "mgemmons@att.net",
                             Gender = "Male",
                             Name = "Arvilla Tedrow",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -275,7 +275,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "tezbo@live.com",
                             Gender = "Male",
                             Name = "Julie Wimbish",
-                            Salutation = "Mrs"
+                            Salutation = 0
                         },
                         new
                         {
@@ -285,7 +285,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "wildfire@yahoo.com",
                             Gender = "Female",
                             Name = "Sasha Shufelt",
-                            Salutation = "Mr"
+                            Salutation = 1
                         },
                         new
                         {
@@ -295,7 +295,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "juliano@icloud.com",
                             Gender = "Male",
                             Name = "Janett Wenger",
-                            Salutation = "Mrs"
+                            Salutation = 0
                         },
                         new
                         {
@@ -305,7 +305,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "drewf@yahoo.ca",
                             Gender = "Male",
                             Name = "Carroll Pogue",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -315,7 +315,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "crandall@sbcglobal.net",
                             Gender = "Female",
                             Name = "Helen Kerry",
-                            Salutation = "Miss"
+                            Salutation = 1
                         },
                         new
                         {
@@ -325,7 +325,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "staffelb@comcast.net",
                             Gender = "Female",
                             Name = "Marta Belle",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -335,7 +335,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "mcnihil@aol.com",
                             Gender = "Male",
                             Name = "Kristel Ringer",
-                            Salutation = "Miss"
+                            Salutation = 1
                         },
                         new
                         {
@@ -345,7 +345,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "airship@gmail.com",
                             Gender = "Female",
                             Name = "Georgetta Pelham",
-                            Salutation = "Mrs"
+                            Salutation = 1
                         },
                         new
                         {
@@ -355,7 +355,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "shaffei@icloud.com",
                             Gender = "Male",
                             Name = "Rosalinda Gorrell",
-                            Salutation = "Miss"
+                            Salutation = 0
                         },
                         new
                         {
@@ -365,23 +365,8 @@ namespace SportsManagementSystem.Migrations
                             Email = "oechslin@gmail.com",
                             Gender = "Male",
                             Name = "Tomasa Vendetti",
-                            Salutation = "Miss"
+                            Salutation = 1
                         });
-                });
-
-            modelBuilder.Entity("SportsManagementSystem.Models.CompetitorGame", b =>
-                {
-                    b.Property<int>("CompetitorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GameId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CompetitorId", "GameId");
-
-                    b.HasIndex("GameId");
-
-                    b.ToTable("CompetitorGames");
                 });
 
             modelBuilder.Entity("SportsManagementSystem.Models.Event", b =>
@@ -404,11 +389,7 @@ namespace SportsManagementSystem.Migrations
                     b.Property<string>("FeatureEvent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("GameId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("GameId1")
+                    b.Property<int>("GameId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("StartTime")
@@ -423,36 +404,25 @@ namespace SportsManagementSystem.Migrations
 
                     b.HasKey("EventId");
 
-                    b.HasIndex("GameId1");
+                    b.HasIndex("GameId");
 
                     b.ToTable("Events");
                 });
 
             modelBuilder.Entity("SportsManagementSystem.Models.EventOutcome", b =>
                 {
-                    b.Property<string>("EventId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CompetitorId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("CompetitorId1")
+                    b.Property<int>("EventId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("EventId1")
+                    b.Property<int>("CompetitorId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Medal")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Position")
                         .HasColumnType("int");
 
                     b.HasKey("EventId", "CompetitorId");
 
-                    b.HasIndex("CompetitorId1");
-
-                    b.HasIndex("EventId1");
+                    b.HasIndex("CompetitorId");
 
                     b.ToTable("EventOutcomes");
                 });
@@ -464,10 +434,7 @@ namespace SportsManagementSystem.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("EventId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("EventId1")
+                    b.Property<int>("EventId")
                         .HasColumnType("int");
 
                     b.Property<string>("Photo")
@@ -479,7 +446,7 @@ namespace SportsManagementSystem.Migrations
 
                     b.HasKey("PhotoId");
 
-                    b.HasIndex("EventId1");
+                    b.HasIndex("EventId");
 
                     b.ToTable("EventPhotos");
                 });
@@ -494,6 +461,9 @@ namespace SportsManagementSystem.Migrations
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CompetitorId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -511,29 +481,45 @@ namespace SportsManagementSystem.Migrations
 
                     b.HasKey("GameId");
 
+                    b.HasIndex("CompetitorId");
+
                     b.ToTable("Games");
-                });
 
-            modelBuilder.Entity("SportsManagementSystem.Models.CompetitorGame", b =>
-                {
-                    b.HasOne("SportsManagementSystem.Models.Competitor", "Competitor")
-                        .WithMany()
-                        .HasForeignKey("CompetitorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SportsManagementSystem.Models.Game", "Game")
-                        .WithMany()
-                        .HasForeignKey("GameId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasData(
+                        new
+                        {
+                            GameId = 1,
+                            Code = "RUN1234",
+                            Description = "Competitors run around a track ",
+                            DurationInHours = 4,
+                            Name = "Running",
+                            RulesBooklet = "/Rules/RUN1234.pdf"
+                        },
+                        new
+                        {
+                            GameId = 2,
+                            Code = "CYC1234",
+                            Description = "Competitors Cycle around a track",
+                            DurationInHours = 2,
+                            Name = "Cycling",
+                            RulesBooklet = "/Rules/CYC1234.pdf"
+                        },
+                        new
+                        {
+                            GameId = 3,
+                            Code = "SWI1234",
+                            Description = "Competitors do laps in a pool",
+                            DurationInHours = 1,
+                            Name = "Swimming",
+                            RulesBooklet = "/Rules/SWI1234.pdf"
+                        });
                 });
 
             modelBuilder.Entity("SportsManagementSystem.Models.Event", b =>
                 {
                     b.HasOne("SportsManagementSystem.Models.Game", "Game")
                         .WithMany()
-                        .HasForeignKey("GameId1")
+                        .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -542,18 +528,31 @@ namespace SportsManagementSystem.Migrations
                 {
                     b.HasOne("SportsManagementSystem.Models.Competitor", "Competitor")
                         .WithMany()
-                        .HasForeignKey("CompetitorId1");
+                        .HasForeignKey("CompetitorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SportsManagementSystem.Models.Event", "Event")
                         .WithMany()
-                        .HasForeignKey("EventId1");
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SportsManagementSystem.Models.EventPhoto", b =>
                 {
                     b.HasOne("SportsManagementSystem.Models.Event", "Event")
                         .WithMany()
-                        .HasForeignKey("EventId1");
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("SportsManagementSystem.Models.Game", b =>
+                {
+                    b.HasOne("SportsManagementSystem.Models.Competitor", null)
+                        .WithMany("Games")
+                        .HasForeignKey("CompetitorId");
                 });
 #pragma warning restore 612, 618
         }

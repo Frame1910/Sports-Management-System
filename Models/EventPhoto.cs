@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,7 +16,8 @@ namespace SportsManagementSystem.Models
         public string Photo { get; set; }
         public string PhotoTags { get; set; }
         // Navigation Properties
-        public string EventId { get; set; }
-        public Event Event { get; set; }
+        [ForeignKey("Event")]
+        public int EventId { get; set; }
+        public virtual Event Event { get; set; }
     }
 }

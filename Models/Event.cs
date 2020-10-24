@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,7 +34,9 @@ namespace SportsManagementSystem.Models
         public string WorldRecord { get; set; }
 
         // Navigation Properties
-        [Required] public string GameId { get; set; }
-        [Required] public Game Game { get; set; }
+        [Display(Name = "Game ID")]
+        [ForeignKey("Game")]
+        public int GameId { get; set; }
+        [Required] public virtual Game Game { get; set; }
     }
 }

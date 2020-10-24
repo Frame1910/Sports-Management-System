@@ -7,12 +7,18 @@ using System.Threading.Tasks;
 
 namespace SportsManagementSystem.Models
 {
+    public enum Salutation
+    {
+        Mr, Mrs, Miss
+    }
+    
     public class Competitor
     {
         [Display(Name = "Competitor ID")]
         [Key]
         public int CompetitorId { get; set; }
-        public string Salutation { get; set; }
+        [DisplayFormat(NullDisplayText = "No Salutation")]
+        public Salutation? Salutation { get; set; }
         [Required] public string Name { get; set; }
         [DataType(DataType.Date)]
         [Display(Name = "Date of Birth")]
@@ -29,5 +35,9 @@ namespace SportsManagementSystem.Models
 
         public string Website { get; set; }
         public string Photo { get; set; }
+
+        // Navigation Properties
+        [Display(Name = "Games")]
+        public virtual ICollection<Game> Games { get; set; }
     }
 }

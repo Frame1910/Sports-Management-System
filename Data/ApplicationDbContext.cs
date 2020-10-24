@@ -13,6 +13,13 @@ namespace SportsManagementSystem.Data
             : base(options)
         {
         }
+    }
+
+    public class SportsDbContext : DbContext
+    {
+        public SportsDbContext(DbContextOptions<SportsDbContext> options) : base(options)
+        {
+        }
 
         public DbSet<Game> Games { get; set; }
         public DbSet<Competitor> Competitors { get; set; }
@@ -24,9 +31,9 @@ namespace SportsManagementSystem.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<CompetitorGame>()
-                .HasKey(c => new {c.CompetitorId, c.GameId});
+                .HasKey(c => new { c.CompetitorId, c.GameId });
             builder.Entity<EventOutcome>()
-                .HasKey(c => new {c.EventId, c.CompetitorId});
+                .HasKey(c => new { c.EventId, c.CompetitorId });
         }
     }
 }

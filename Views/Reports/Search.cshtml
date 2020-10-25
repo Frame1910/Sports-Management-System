@@ -1,0 +1,59 @@
+﻿@model List<EventPhoto>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "_Layout";
+}
+
+<h1>Search</h1>
+<div class="container">
+    <form asp-controller="Reports" asp-action="Search">
+        <div class="row">
+            <div class="col-6">
+                Photo Tag:<input class="form-control" type="text" name="searchTerm"/></div>
+            <div class="col-6">
+                <input class="btn btn-primary" type="submit" value="Search"/></div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Photo
+                    </th>
+                    <th>
+                        Tags
+                    </th>
+                    <th>
+                        Event ID
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Photo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhotoTags)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Event.EventId)
+                        </td>
+                        <td>
+                            <a asp-controller="EventPhotoes" asp-action="Edit" asp-route-id="@item.PhotoId">Edit</a> |
+                            <a asp-controller="EventPhotoes" asp-action="Details" asp-route-id="@item.PhotoId">Details</a> |
+                            <a asp-controller="EventPhotoes" asp-action="Delete" asp-route-id="@item.PhotoId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

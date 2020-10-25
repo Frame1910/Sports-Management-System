@@ -184,47 +184,16 @@ namespace SportsManagementSystem.Data
             };
             string[] Countries =
             {
-                "Cambodia", "Guinea", "Ukraine", "Sri Lanka", "Western Sahara", "Iceland", "Northern Mariana Islands",
-                "Indonesia", "Azerbaijan", "Solomon Islands", "Sweden", "Australia", "South Korea", "Christmas Island",
-                "Wallis and Futuna", "Kiribati", "Equatorial Guinea", "Liechtenstein", "France", "Greenland",
-                "Bouvet Island", "Saint Martin", "Norway", "Russia", "French Southern Territories", "Olympics", "Olympics", "Olympics", "Olympics", "Olympics"
+                "Cambodia", "Sri Lanka", "Ukraine", "Sri Lanka", "Sri Lanka", "Iceland", "Northern Mariana Islands",
+                "Indonesia", "France", "France", "Sweden", "Australia", "South Korea", "Christmas Island",
+                "France", "Kiribati", "Equatorial Guinea", "Liechtenstein", "France", "Greenland",
+                "France", "France", "Norway", "Russia", "Sri Lanka", "Olympics", "Olympics", "Olympics", "Olympics", "Olympics"
             };
             string[] Genders =
             {
                 "Male", "Female", "Male", "Female", "Female", "Male", "Male", "Female", "Male", "Male", "Female", "Female", "Female", "Male", "Male", "Female", "Male", "Male", "Female", "Male", "Male", "Female", "Male",
                 "Male", "Female", "Female", "Male", "Female", "Male", "Male"
             };
-            Game[] gamesList =
-            {
-                new Game
-                {
-                    GameId = 1,
-                    Code = "RUN1234",
-                    Name = "Running",
-                    DurationInHours = 4,
-                    Description = "Competitors run around a track ",
-                    RulesBooklet = "/Rules/RUN1234.pdf"
-                },
-                new Game
-                {
-                    GameId = 2,
-                    Code = "CYC1234",
-                    Name = "Cycling",
-                    DurationInHours = 2,
-                    Description = "Competitors Cycle around a track",
-                    RulesBooklet = "/Rules/CYC1234.pdf"
-                },
-                new Game
-                {
-                    GameId = 3,
-                    Code = "SWI1234",
-                    Name = "Swimming",
-                    DurationInHours = 1,
-                    Description = "Competitors do laps in a pool",
-                    RulesBooklet = "/Rules/SWI1234.pdf"
-                }
-            };
-
             Salutation[] salutes = {Salutation.Mr, Salutation.Mrs, Salutation.Miss};
             Random rand = new Random();
             
@@ -254,6 +223,42 @@ namespace SportsManagementSystem.Data
                         {
                             CompetitorId = i,
                             GameId = rand.Next(1, 4)
+                        });
+            }
+
+            string[] gameNames = {"Running", "Swimming", "Cycling"};
+            string[] venueNames = {"Track", "Pool", "Course"};
+            string[] dates = {"01/12/2020", "02/12/2020", "03/12/2020"};
+            // Event Seeding
+            for (int i = 1; i < 4; i++)
+            {
+                var number = rand.Next(1, 3);
+                builder.Entity<Event>()
+                    .HasData(
+                        new Event
+                        {
+                            EventId = i,
+                            FeatureEvent = gameNames[number],
+                            Venue = venueNames[number],
+                            Date = DateTime.Parse(dates[number]),
+                            StartTime = DateTime.Today,
+                            EndTime = DateTime.Today.AddHours(3),
+                            Description = "An event description",
+                            WorldRecord = "What is this even supposed to mean? Assignment Sheet doesn't say",
+                            GameId = rand.Next(1, 4)
+                        });
+            }
+
+            // Event Outcome Seeding
+            for (int i = 1; i < 25; i++)
+            {
+                builder.Entity<EventOutcome>()
+                    .HasData(
+                        new EventOutcome
+                        {
+                            EventId = rand.Next(1, 3),
+                            CompetitorId = i,
+                            Position = rand.Next(1, 4)
                         });
             }
         }

@@ -10,8 +10,8 @@ using SportsManagementSystem.Data;
 namespace SportsManagementSystem.Migrations
 {
     [DbContext(typeof(SportsDbContext))]
-    [Migration("20201025073234_EventModelChange")]
-    partial class EventModelChange
+    [Migration("20201025134136_Seed")]
+    partial class Seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,12 +80,12 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 2,
-                            Country = "Guinea",
+                            Country = "Sri Lanka",
                             Dob = new DateTime(1980, 5, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "lukka@msn.com",
                             Gender = "Female",
                             Name = "Petrina Bassi",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -110,7 +110,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 5,
-                            Country = "Western Sahara",
+                            Country = "Sri Lanka",
                             Dob = new DateTime(1982, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bflong@comcast.net",
                             Gender = "Female",
@@ -135,7 +135,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "hmbrand@att.net",
                             Gender = "Male",
                             Name = "Chasity Wesolowski",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
@@ -145,12 +145,12 @@ namespace SportsManagementSystem.Migrations
                             Email = "ninenine@msn.com",
                             Gender = "Female",
                             Name = "Mike Pautz",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
                             CompetitorId = 9,
-                            Country = "Azerbaijan",
+                            Country = "France",
                             Dob = new DateTime(1984, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "oracle@verizon.net",
                             Gender = "Male",
@@ -160,7 +160,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 10,
-                            Country = "Solomon Islands",
+                            Country = "France",
                             Dob = new DateTime(1984, 11, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "hermanab@msn.com",
                             Gender = "Male",
@@ -185,7 +185,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "bogjobber@yahoo.com",
                             Gender = "Female",
                             Name = "Palmira Halbert",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -205,17 +205,17 @@ namespace SportsManagementSystem.Migrations
                             Email = "cliffordj@mac.com",
                             Gender = "Male",
                             Name = "Dottie Hitchens",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
                             CompetitorId = 15,
-                            Country = "Wallis and Futuna",
+                            Country = "France",
                             Dob = new DateTime(1989, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "dkasak@outlook.com",
                             Gender = "Male",
                             Name = "Kristine Guidry",
-                            Salutation = 0
+                            Salutation = 2
                         },
                         new
                         {
@@ -235,7 +235,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "wojciech@optonline.net",
                             Gender = "Male",
                             Name = "Mattie Tally",
-                            Salutation = 0
+                            Salutation = 2
                         },
                         new
                         {
@@ -245,7 +245,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "odlyzko@comcast.net",
                             Gender = "Male",
                             Name = "Craig Kimpel",
-                            Salutation = 1
+                            Salutation = 2
                         },
                         new
                         {
@@ -265,27 +265,27 @@ namespace SportsManagementSystem.Migrations
                             Email = "mgemmons@att.net",
                             Gender = "Male",
                             Name = "Arvilla Tedrow",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
                             CompetitorId = 21,
-                            Country = "Bouvet Island",
+                            Country = "France",
                             Dob = new DateTime(1994, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tezbo@live.com",
                             Gender = "Male",
                             Name = "Julie Wimbish",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
                             CompetitorId = 22,
-                            Country = "Saint Martin",
+                            Country = "France",
                             Dob = new DateTime(1994, 7, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "wildfire@yahoo.com",
                             Gender = "Female",
                             Name = "Sasha Shufelt",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -305,17 +305,17 @@ namespace SportsManagementSystem.Migrations
                             Email = "drewf@yahoo.ca",
                             Gender = "Male",
                             Name = "Carroll Pogue",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
                             CompetitorId = 25,
-                            Country = "French Southern Territories",
+                            Country = "Sri Lanka",
                             Dob = new DateTime(1997, 7, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "crandall@sbcglobal.net",
                             Gender = "Female",
                             Name = "Helen Kerry",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -335,7 +335,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "mcnihil@aol.com",
                             Gender = "Male",
                             Name = "Kristel Ringer",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -345,7 +345,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "airship@gmail.com",
                             Gender = "Female",
                             Name = "Georgetta Pelham",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
@@ -365,7 +365,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "oechslin@gmail.com",
                             Gender = "Male",
                             Name = "Tomasa Vendetti",
-                            Salutation = 2
+                            Salutation = 0
                         });
                 });
 
@@ -387,17 +387,17 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 1,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 2,
                             GameId = 1
                         },
                         new
                         {
-                            CompetitorId = 3,
+                            CompetitorId = 2,
                             GameId = 2
+                        },
+                        new
+                        {
+                            CompetitorId = 3,
+                            GameId = 1
                         },
                         new
                         {
@@ -407,7 +407,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 5,
-                            GameId = 3
+                            GameId = 2
                         },
                         new
                         {
@@ -417,7 +417,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 7,
-                            GameId = 1
+                            GameId = 2
                         },
                         new
                         {
@@ -427,17 +427,17 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 9,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 10,
-                            GameId = 3
+                            GameId = 2
                         },
                         new
                         {
                             CompetitorId = 11,
-                            GameId = 3
+                            GameId = 1
                         },
                         new
                         {
@@ -447,17 +447,17 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 13,
-                            GameId = 2
+                            GameId = 1
                         },
                         new
                         {
                             CompetitorId = 14,
-                            GameId = 2
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 15,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
@@ -472,27 +472,27 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 18,
-                            GameId = 2
+                            GameId = 1
                         },
                         new
                         {
                             CompetitorId = 19,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 20,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 21,
-                            GameId = 2
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 22,
-                            GameId = 3
+                            GameId = 1
                         },
                         new
                         {
@@ -502,17 +502,17 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 24,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 25,
-                            GameId = 2
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 26,
-                            GameId = 1
+                            GameId = 2
                         },
                         new
                         {
@@ -522,7 +522,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 28,
-                            GameId = 1
+                            GameId = 2
                         },
                         new
                         {
@@ -569,6 +569,44 @@ namespace SportsManagementSystem.Migrations
                     b.HasIndex("GameId");
 
                     b.ToTable("Events");
+
+                    b.HasData(
+                        new
+                        {
+                            EventId = 1,
+                            Date = new DateTime(2020, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "An event description",
+                            EndTime = new DateTime(2020, 10, 25, 3, 0, 0, 0, DateTimeKind.Local),
+                            FeatureEvent = "Swimming",
+                            GameId = 3,
+                            StartTime = new DateTime(2020, 10, 25, 0, 0, 0, 0, DateTimeKind.Local),
+                            Venue = "Pool",
+                            WorldRecord = "What is this even supposed to mean? Assignment Sheet doesn't say"
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            Date = new DateTime(2020, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "An event description",
+                            EndTime = new DateTime(2020, 10, 25, 3, 0, 0, 0, DateTimeKind.Local),
+                            FeatureEvent = "Swimming",
+                            GameId = 3,
+                            StartTime = new DateTime(2020, 10, 25, 0, 0, 0, 0, DateTimeKind.Local),
+                            Venue = "Pool",
+                            WorldRecord = "What is this even supposed to mean? Assignment Sheet doesn't say"
+                        },
+                        new
+                        {
+                            EventId = 3,
+                            Date = new DateTime(2020, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "An event description",
+                            EndTime = new DateTime(2020, 10, 25, 3, 0, 0, 0, DateTimeKind.Local),
+                            FeatureEvent = "Swimming",
+                            GameId = 3,
+                            StartTime = new DateTime(2020, 10, 25, 0, 0, 0, 0, DateTimeKind.Local),
+                            Venue = "Pool",
+                            WorldRecord = "What is this even supposed to mean? Assignment Sheet doesn't say"
+                        });
                 });
 
             modelBuilder.Entity("SportsManagementSystem.Models.EventOutcome", b =>
@@ -587,6 +625,152 @@ namespace SportsManagementSystem.Migrations
                     b.HasIndex("CompetitorId");
 
                     b.ToTable("EventOutcomes");
+
+                    b.HasData(
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 1,
+                            Position = 1
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 2,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 3,
+                            Position = 1
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 4,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 5,
+                            Position = 2
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 6,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 7,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 8,
+                            Position = 1
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 9,
+                            Position = 2
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 10,
+                            Position = 1
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 11,
+                            Position = 2
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 12,
+                            Position = 1
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 13,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 14,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 15,
+                            Position = 2
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 16,
+                            Position = 1
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 17,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 18,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 19,
+                            Position = 2
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 20,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 21,
+                            Position = 1
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 22,
+                            Position = 2
+                        },
+                        new
+                        {
+                            EventId = 1,
+                            CompetitorId = 23,
+                            Position = 3
+                        },
+                        new
+                        {
+                            EventId = 2,
+                            CompetitorId = 24,
+                            Position = 3
+                        });
                 });
 
             modelBuilder.Entity("SportsManagementSystem.Models.EventPhoto", b =>

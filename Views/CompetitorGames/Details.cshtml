@@ -1,0 +1,30 @@
+﻿@model SportsManagementSystem.Models.CompetitorGames
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CompetitorGames</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Competitor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Competitor.Country)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Game)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Game.Code)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <a class="btn btn-primary btn-sm" asp-action="Index"><i class="fas fa-undo-alt"></i> Back to List</a>
+</div>

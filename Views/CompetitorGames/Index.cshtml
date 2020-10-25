@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SportsManagementSystem.Models.CompetitorGames>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <p>
+                <a class="btn btn-primary btn-sm" asp-controller="Competitors"><i class="fas fa-undo-alt"></i> Back to Competitor List</a>
+            </p>
+        </div>
+        <div class="col-3">
+            <p>
+                <a class="btn btn-primary btn-sm" asp-action="Create"><i class="fas fa-plus-square"></i> Set Competitor's Game</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Competitor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Game)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Competitor.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Game.Code)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { Game_ID = item.GameId, Competitor_ID = item.CompetitorId }) |
+                        @Html.ActionLink("Details", "Details", new { Game_ID = item.GameId, Competitor_ID = item.CompetitorId }) |
+                        @Html.ActionLink("Delete Competitor", "Delete", "Competitors", new { id = item.CompetitorId })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

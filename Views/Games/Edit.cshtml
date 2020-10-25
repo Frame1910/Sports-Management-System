@@ -39,15 +39,16 @@
                 <input asp-for="RulesBooklet" class="form-control" />
                 <span asp-validation-for="RulesBooklet" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="row">
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+            <div class="row">
+                <a class="btn btn-primary btn-sm" asp-action="Index"><i class="fas fa-undo-alt"></i> Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SportsManagementSystem.Models.EventPhoto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <p>
+                <a class="btn btn-primary btn-sm" asp-controller="Events"><i class="fas fa-undo-alt"></i> Back to Event List</a>
+            </p>
+        </div>
+        <div class="col-3">
+            <p>
+                <a class="btn btn-primary btn-sm" asp-action="Create"><i class="fas fa-plus-square"></i> New Event Photo</a>
+            </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhotoTags)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event)
+                </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Photo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhotoTags)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.EventId)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PhotoId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.PhotoId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.PhotoId">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

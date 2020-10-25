@@ -10,68 +10,78 @@
 <h4>Competitor</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-8">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Salutation" class="control-label"></label>
-                <input asp-for="Salutation" class="form-control" />
-                <span asp-validation-for="Salutation" class="text-danger"></span>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Salutation" class="control-label"></label>
+                        <select class="form-control" asp-for="Salutation" asp-items="Html.GetEnumSelectList<Salutation>()">
+                            <option selected="selected" value="">Please Select</option>
+                        </select>
+                        <span asp-validation-for="Salutation" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Dob" class="control-label"></label>
+                        <input asp-for="Dob" class="form-control" />
+                        <span asp-validation-for="Dob" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Country" class="control-label"></label>
+                        <input asp-for="Country" class="form-control" />
+                        <span asp-validation-for="Country" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label"></label>
+                        <input asp-for="Gender" class="form-control" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ContactNo" class="control-label"></label>
+                        <input asp-for="ContactNo" class="form-control" />
+                        <span asp-validation-for="ContactNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Website" class="control-label"></label>
+                        <input asp-for="Website" class="form-control" />
+                        <span asp-validation-for="Website" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Photo" class="control-label"></label>
+                        <input asp-for="Photo" class="form-control" />
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+            <div class="row">
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Dob" class="control-label"></label>
-                <input asp-for="Dob" class="form-control" />
-                <span asp-validation-for="Dob" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Country" class="control-label"></label>
-                <input asp-for="Country" class="form-control" />
-                <span asp-validation-for="Country" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ContactNo" class="control-label"></label>
-                <input asp-for="ContactNo" class="form-control" />
-                <span asp-validation-for="ContactNo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Website" class="control-label"></label>
-                <input asp-for="Website" class="form-control" />
-                <span asp-validation-for="Website" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Photo" class="control-label"></label>
-                <input asp-for="Photo" class="form-control" />
-                <span asp-validation-for="Photo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="row">
+                <a class="btn btn-primary btn-sm" asp-action="Index"><i class="fas fa-undo-alt"></i> Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

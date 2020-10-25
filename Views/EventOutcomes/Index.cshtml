@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SportsManagementSystem.Models.EventOutcome>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <p>
+                <a class="btn btn-primary btn-sm" asp-controller="Events"><i class="fas fa-undo-alt"></i> Back to Event List</a>
+            </p>
+        </div>
+        <div class="col-3">
+            <p>
+                <a class="btn btn-primary btn-sm" asp-action="Create"><i class="fas fa-plus-square"></i> New Event Outcome</a>
+            </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Event)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Competitor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Position)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Medal)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.EventId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Competitor.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Medal)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { Event_ID = item.EventId, Competitor_ID = item.CompetitorId }) |
+                        @Html.ActionLink("Delete", "Delete", new { Event_ID = item.EventId, Competitor_ID = item.CompetitorId })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

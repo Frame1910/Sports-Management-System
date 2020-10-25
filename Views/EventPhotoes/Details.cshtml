@@ -1,0 +1,41 @@
+﻿@model SportsManagementSystem.Models.EventPhoto
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>EventPhoto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhotoTags)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhotoTags)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Event.EventId)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="form-group">
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.PhotoId">Edit</a>
+    </div>
+</div>
+<div class="row">
+    <a class="btn btn-primary btn-sm" asp-action="Index"><i class="fas fa-undo-alt"></i> Back to List</a>
+</div>

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SportsManagementSystem.Data;
 
 namespace SportsManagementSystem.Migrations
 {
     [DbContext(typeof(SportsDbContext))]
-    partial class SportsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201025035540_Seed")]
+    partial class Seed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,7 +85,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "lukka@msn.com",
                             Gender = "Female",
                             Name = "Petrina Bassi",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -103,7 +105,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "galbra@optonline.net",
                             Gender = "Female",
                             Name = "Ashton Tackett",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -123,7 +125,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "juliano@yahoo.com",
                             Gender = "Male",
                             Name = "Bernice Moorman",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
@@ -133,7 +135,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "hmbrand@att.net",
                             Gender = "Male",
                             Name = "Chasity Wesolowski",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -143,7 +145,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "ninenine@msn.com",
                             Gender = "Female",
                             Name = "Mike Pautz",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -153,7 +155,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "oracle@verizon.net",
                             Gender = "Male",
                             Name = "Isela Spiegel",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -163,7 +165,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "hermanab@msn.com",
                             Gender = "Male",
                             Name = "Shizue Theiss",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -223,7 +225,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "petersen@mac.com",
                             Gender = "Female",
                             Name = "Carita Schlegel",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -243,7 +245,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "odlyzko@comcast.net",
                             Gender = "Male",
                             Name = "Craig Kimpel",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -253,7 +255,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "retoh@gmail.com",
                             Gender = "Female",
                             Name = "Susy Mullett",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -263,7 +265,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "mgemmons@att.net",
                             Gender = "Male",
                             Name = "Arvilla Tedrow",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -283,7 +285,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "wildfire@yahoo.com",
                             Gender = "Female",
                             Name = "Sasha Shufelt",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -293,7 +295,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "juliano@icloud.com",
                             Gender = "Male",
                             Name = "Janett Wenger",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
@@ -313,7 +315,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "crandall@sbcglobal.net",
                             Gender = "Female",
                             Name = "Helen Kerry",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -333,7 +335,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "mcnihil@aol.com",
                             Gender = "Male",
                             Name = "Kristel Ringer",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
@@ -343,7 +345,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "airship@gmail.com",
                             Gender = "Female",
                             Name = "Georgetta Pelham",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
@@ -353,7 +355,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "shaffei@icloud.com",
                             Gender = "Male",
                             Name = "Rosalinda Gorrell",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -363,7 +365,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "oechslin@gmail.com",
                             Gender = "Male",
                             Name = "Tomasa Vendetti",
-                            Salutation = 2
+                            Salutation = 1
                         });
                 });
 
@@ -380,153 +382,6 @@ namespace SportsManagementSystem.Migrations
                     b.HasIndex("GameId");
 
                     b.ToTable("CompetitorGames");
-
-                    b.HasData(
-                        new
-                        {
-                            CompetitorId = 1,
-                            GameId = 3
-                        },
-                        new
-                        {
-                            CompetitorId = 2,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 3,
-                            GameId = 3
-                        },
-                        new
-                        {
-                            CompetitorId = 4,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 5,
-                            GameId = 3
-                        },
-                        new
-                        {
-                            CompetitorId = 6,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 7,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 8,
-                            GameId = 3
-                        },
-                        new
-                        {
-                            CompetitorId = 9,
-                            GameId = 3
-                        },
-                        new
-                        {
-                            CompetitorId = 10,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 11,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 12,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 13,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 14,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 15,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 16,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 17,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 18,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 19,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 20,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 21,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 22,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 23,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 24,
-                            GameId = 3
-                        },
-                        new
-                        {
-                            CompetitorId = 25,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 26,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 27,
-                            GameId = 2
-                        },
-                        new
-                        {
-                            CompetitorId = 28,
-                            GameId = 1
-                        },
-                        new
-                        {
-                            CompetitorId = 29,
-                            GameId = 1
-                        });
                 });
 
             modelBuilder.Entity("SportsManagementSystem.Models.Event", b =>

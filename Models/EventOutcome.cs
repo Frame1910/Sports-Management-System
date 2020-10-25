@@ -15,6 +15,7 @@ namespace SportsManagementSystem.Models
         public int EventId { get; set; }
         public virtual Event Event { get; set; }
         [ForeignKey("Competitor")]
+        [Display(Name = "Competitor ID")]
         public int CompetitorId { get; set; }
         public virtual Competitor Competitor { get; set; }
         [Required]

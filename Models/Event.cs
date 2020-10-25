@@ -28,7 +28,8 @@ namespace SportsManagementSystem.Models
         [Required]
         [DataType(DataType.Time)]
         [Display(Name = "End Time")]
-        public DateTime EndTime { get; set; }
+        public DateTime EndTime => StartTime.AddHours(Game.DurationInHours);
+
         [Required] public string Description { get; set; }
         [Display(Name = "World Record")]
         public string WorldRecord { get; set; }

@@ -19,20 +19,38 @@ namespace SportsManagementSystem.Data
 
     public class SportsDbContext : DbContext
     {
-        public SportsDbContext(DbContextOptions<SportsDbContext> options) : base(options)
+        public SportsDbContext(DbContextOptions<SportsDbContext> options) 
+            : base(options)
         {
         }
 
         public DbSet<Game> Games { get; set; }
         public DbSet<Competitor> Competitors { get; set; }
+        public DbSet<CompetitorGames> CompetitorGames { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<EventOutcome> EventOutcomes { get; set; }
         public DbSet<EventPhoto> EventPhotos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            // Event Outcome relationship definition 
             builder.Entity<EventOutcome>()
-                .HasKey(c => new { c.EventId, c.CompetitorId });
+                .HasKey(c => new {c.EventId, c.CompetitorId});
+
+            // CompetitorGames relationship definition 
+            builder.Entity<CompetitorGames>()
+                .HasKey(cg => new {cg.CompetitorId, cg.GameId});
+            builder.Entity<CompetitorGames>()
+                .HasOne(cg => cg.Competitor)
+                .WithMany(cg => cg.CompetitorGames)
+                .HasForeignKey(cg => cg.CompetitorId)
+                .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<CompetitorGames>()
+                .HasOne(cg => cg.Game)
+                .WithMany(cg => cg.CompetitorGames)
+                .HasForeignKey(cg => cg.GameId);
+
+            // Seed Game Table
             builder.Entity<Game>()
                 .HasData(
                     new Game
@@ -63,6 +81,8 @@ namespace SportsManagementSystem.Data
                         RulesBooklet = "/Rules/SWI1234.pdf"
                     });
 
+
+            // Competitor Seeding
             string[] names =
             {
                 "Jani Hosea",
@@ -219,10 +239,21 @@ namespace SportsManagementSystem.Data
                             Name = names[i],
                             Country = Countries[i],
                             Dob = DateTime.Parse(DOBs[i]),
-                            Salutation = salutes[rand.Next(0, 2)],
+                            Salutation = salutes[rand.Next(0, 3)],
                             Email = Emails[i],
-                            Gender = Genders[i],
-                            Games = { }
+                            Gender = Genders[i]
+                        });
+            }
+
+            // CompetitorGames Seeding
+            for (int i = 1; i < names.Length; i++)
+            {
+                builder.Entity<CompetitorGames>()
+                    .HasData(
+                        new CompetitorGames
+                        {
+                            CompetitorId = i,
+                            GameId = rand.Next(1, 4)
                         });
             }
         }

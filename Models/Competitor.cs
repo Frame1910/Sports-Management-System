@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Threading.Tasks;
@@ -37,7 +38,6 @@ namespace SportsManagementSystem.Models
         public string Photo { get; set; }
 
         // Navigation Properties
-        [Display(Name = "Games")]
-        public virtual ICollection<Game> Games { get; set; }
+        public virtual ICollection<CompetitorGames> CompetitorGames { get; set; }
     }
 }

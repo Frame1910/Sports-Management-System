@@ -20,5 +20,7 @@ namespace SportsManagementSystem.Models
         [Required] 
         [Display(Name = "Rules Booklet")]
         public string RulesBooklet { get; set; }
+        // Navigation Properties
+        public virtual ICollection<CompetitorGames> CompetitorGames { get; set; }
     }
 }

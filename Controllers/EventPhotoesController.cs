@@ -12,23 +12,23 @@ using SportsManagementSystem.Models;
 namespace SportsManagementSystem.Controllers
 {
     [Authorize(Roles = "EventManager")]
-    public class EventsController : Controller
+    public class EventPhotoesController : Controller
     {
         private readonly SportsDbContext _context;
 
-        public EventsController(SportsDbContext context)
+        public EventPhotoesController(SportsDbContext context)
         {
             _context = context;
         }
 
-        // GET: Events
+        // GET: EventPhotoes
         public async Task<IActionResult> Index()
         {
-            var sportsDbContext = _context.Events.Include(e => e.Game);
+            var sportsDbContext = _context.EventPhotos.Include(e => e.Event);
             return View(await sportsDbContext.ToListAsync());
         }
 
-        // GET: Events/Details/5
+        // GET: EventPhotoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,42 +36,42 @@ namespace SportsManagementSystem.Controllers
                 return NotFound();
             }
 
-            var @event = await _context.Events
-                .Include(e => e.Game)
-                .FirstOrDefaultAsync(m => m.EventId == id);
-            if (@event == null)
+            var eventPhoto = await _context.EventPhotos
+                .Include(e => e.Event)
+                .FirstOrDefaultAsync(m => m.PhotoId == id);
+            if (eventPhoto == null)
             {
                 return NotFound();
             }
 
-            return View(@event);
+            return View(eventPhoto);
         }
 
-        // GET: Events/Create
+        // GET: EventPhotoes/Create
         public IActionResult Create()
         {
-            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code");
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventId");
             return View();
         }
 
-        // POST: Events/Create
+        // POST: EventPhotoes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EventId,GameId,FeatureEvent,Venue,Date,StartTime,EndTime,Description,WorldRecord")] Event @event)
+        public async Task<IActionResult> Create([Bind("PhotoId,Photo,PhotoTags,EventId")] EventPhoto eventPhoto)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(@event);
+                _context.Add(eventPhoto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code", @event.GameId);
-            return View(@event);
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventId", eventPhoto.EventId);
+            return View(eventPhoto);
         }
 
-        // GET: Events/Edit/5
+        // GET: EventPhotoes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,23 +79,23 @@ namespace SportsManagementSystem.Controllers
                 return NotFound();
             }
 
-            var @event = await _context.Events.FindAsync(id);
-            if (@event == null)
+            var eventPhoto = await _context.EventPhotos.FindAsync(id);
+            if (eventPhoto == null)
             {
                 return NotFound();
             }
-            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code", @event.GameId);
-            return View(@event);
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventId", eventPhoto.EventId);
+            return View(eventPhoto);
         }
 
-        // POST: Events/Edit/5
+        // POST: EventPhotoes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EventId,GameId,FeatureEvent,Venue,Date,StartTime,EndTime,Description,WorldRecord")] Event @event)
+        public async Task<IActionResult> Edit(int id, [Bind("PhotoId,Photo,PhotoTags,EventId")] EventPhoto eventPhoto)
         {
-            if (id != @event.EventId)
+            if (id != eventPhoto.PhotoId)
             {
                 return NotFound();
             }
@@ -104,12 +104,12 @@ namespace SportsManagementSystem.Controllers
             {
                 try
                 {
-                    _context.Update(@event);
+                    _context.Update(eventPhoto);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EventExists(@event.EventId))
+                    if (!EventPhotoExists(eventPhoto.PhotoId))
                     {
                         return NotFound();
                     }
@@ -120,11 +120,11 @@ namespace SportsManagementSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GameId"] = new SelectList(_context.Games, "GameId", "Code", @event.GameId);
-            return View(@event);
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "EventId", eventPhoto.EventId);
+            return View(eventPhoto);
         }
 
-        // GET: Events/Delete/5
+        // GET: EventPhotoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,31 +132,31 @@ namespace SportsManagementSystem.Controllers
                 return NotFound();
             }
 
-            var @event = await _context.Events
-                .Include(e => e.Game)
-                .FirstOrDefaultAsync(m => m.EventId == id);
-            if (@event == null)
+            var eventPhoto = await _context.EventPhotos
+                .Include(e => e.Event)
+                .FirstOrDefaultAsync(m => m.PhotoId == id);
+            if (eventPhoto == null)
             {
                 return NotFound();
             }
 
-            return View(@event);
+            return View(eventPhoto);
         }
 
-        // POST: Events/Delete/5
+        // POST: EventPhotoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var @event = await _context.Events.FindAsync(id);
-            _context.Events.Remove(@event);
+            var eventPhoto = await _context.EventPhotos.FindAsync(id);
+            _context.EventPhotos.Remove(eventPhoto);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EventExists(int id)
+        private bool EventPhotoExists(int id)
         {
-            return _context.Events.Any(e => e.EventId == id);
+            return _context.EventPhotos.Any(e => e.PhotoId == id);
         }
     }
 }

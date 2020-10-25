@@ -12,6 +12,15 @@ namespace SportsManagementSystem.Models
         [Display(Name = "Event ID")]
         [Key]
         public int EventId { get; set; }
+
+
+        // Navigation Properties
+        [Display(Name = "Game ID")]
+        [ForeignKey("Game")]
+        public int GameId { get; set; }
+        public virtual Game Game { get; set; }
+
+
         [Display(Name = "Featured Event")]
         public string FeatureEvent { get; set; }
         [Required] public string Venue { get; set; }
@@ -25,19 +34,11 @@ namespace SportsManagementSystem.Models
         [Display(Name = "Start Time")]
         public DateTime StartTime { get; set; }
 
-        [Required]
         [DataType(DataType.Time)]
-        [Display(Name = "End Time")]
-        public DateTime EndTime => StartTime.AddHours(Game.DurationInHours);
+        public DateTime EndTime { get; set; }
 
         [Required] public string Description { get; set; }
         [Display(Name = "World Record")]
         public string WorldRecord { get; set; }
-
-        // Navigation Properties
-        [Display(Name = "Game ID")]
-        [ForeignKey("Game")]
-        public int GameId { get; set; }
-        [Required] public virtual Game Game { get; set; }
     }
 }

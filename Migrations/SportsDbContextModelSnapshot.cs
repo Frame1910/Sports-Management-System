@@ -83,7 +83,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "lukka@msn.com",
                             Gender = "Female",
                             Name = "Petrina Bassi",
-                            Salutation = 1
+                            Salutation = 2
                         },
                         new
                         {
@@ -93,7 +93,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "majordick@live.com",
                             Gender = "Male",
                             Name = "Antione Yearta",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -113,7 +113,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "bflong@comcast.net",
                             Gender = "Female",
                             Name = "Latisha Skerrett",
-                            Salutation = 1
+                            Salutation = 2
                         },
                         new
                         {
@@ -133,7 +133,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "hmbrand@att.net",
                             Gender = "Male",
                             Name = "Chasity Wesolowski",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -143,7 +143,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "ninenine@msn.com",
                             Gender = "Female",
                             Name = "Mike Pautz",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -153,7 +153,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "oracle@verizon.net",
                             Gender = "Male",
                             Name = "Isela Spiegel",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -163,7 +163,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "hermanab@msn.com",
                             Gender = "Male",
                             Name = "Shizue Theiss",
-                            Salutation = 2
+                            Salutation = 0
                         },
                         new
                         {
@@ -173,7 +173,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "tromey@gmail.com",
                             Gender = "Female",
                             Name = "Brandon Musgrove",
-                            Salutation = 1
+                            Salutation = 2
                         },
                         new
                         {
@@ -183,7 +183,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "bogjobber@yahoo.com",
                             Gender = "Female",
                             Name = "Palmira Halbert",
-                            Salutation = 0
+                            Salutation = 2
                         },
                         new
                         {
@@ -193,7 +193,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "irving@optonline.net",
                             Gender = "Female",
                             Name = "Lewis Hohl",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -203,7 +203,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "cliffordj@mac.com",
                             Gender = "Male",
                             Name = "Dottie Hitchens",
-                            Salutation = 0
+                            Salutation = 2
                         },
                         new
                         {
@@ -233,7 +233,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "wojciech@optonline.net",
                             Gender = "Male",
                             Name = "Mattie Tally",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -243,7 +243,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "odlyzko@comcast.net",
                             Gender = "Male",
                             Name = "Craig Kimpel",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -253,7 +253,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "retoh@gmail.com",
                             Gender = "Female",
                             Name = "Susy Mullett",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -263,7 +263,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "mgemmons@att.net",
                             Gender = "Male",
                             Name = "Arvilla Tedrow",
-                            Salutation = 1
+                            Salutation = 0
                         },
                         new
                         {
@@ -273,7 +273,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "tezbo@live.com",
                             Gender = "Male",
                             Name = "Julie Wimbish",
-                            Salutation = 0
+                            Salutation = 2
                         },
                         new
                         {
@@ -283,7 +283,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "wildfire@yahoo.com",
                             Gender = "Female",
                             Name = "Sasha Shufelt",
-                            Salutation = 2
+                            Salutation = 1
                         },
                         new
                         {
@@ -303,7 +303,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "drewf@yahoo.ca",
                             Gender = "Male",
                             Name = "Carroll Pogue",
-                            Salutation = 0
+                            Salutation = 2
                         },
                         new
                         {
@@ -333,7 +333,7 @@ namespace SportsManagementSystem.Migrations
                             Email = "mcnihil@aol.com",
                             Gender = "Male",
                             Name = "Kristel Ringer",
-                            Salutation = 0
+                            Salutation = 1
                         },
                         new
                         {
@@ -385,7 +385,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 1,
-                            GameId = 3
+                            GameId = 2
                         },
                         new
                         {
@@ -395,7 +395,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 3,
-                            GameId = 3
+                            GameId = 2
                         },
                         new
                         {
@@ -410,7 +410,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 6,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
@@ -420,42 +420,42 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 8,
-                            GameId = 3
+                            GameId = 1
                         },
                         new
                         {
                             CompetitorId = 9,
-                            GameId = 3
+                            GameId = 1
                         },
                         new
                         {
                             CompetitorId = 10,
-                            GameId = 2
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 11,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 12,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
                             CompetitorId = 13,
-                            GameId = 1
+                            GameId = 2
                         },
                         new
                         {
                             CompetitorId = 14,
-                            GameId = 1
+                            GameId = 2
                         },
                         new
                         {
                             CompetitorId = 15,
-                            GameId = 2
+                            GameId = 1
                         },
                         new
                         {
@@ -465,7 +465,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 17,
-                            GameId = 2
+                            GameId = 1
                         },
                         new
                         {
@@ -480,17 +480,17 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 20,
-                            GameId = 2
+                            GameId = 1
                         },
                         new
                         {
                             CompetitorId = 21,
-                            GameId = 1
+                            GameId = 2
                         },
                         new
                         {
                             CompetitorId = 22,
-                            GameId = 1
+                            GameId = 3
                         },
                         new
                         {
@@ -500,22 +500,22 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 24,
-                            GameId = 3
-                        },
-                        new
-                        {
-                            CompetitorId = 25,
                             GameId = 1
                         },
                         new
                         {
-                            CompetitorId = 26,
+                            CompetitorId = 25,
                             GameId = 2
                         },
                         new
                         {
+                            CompetitorId = 26,
+                            GameId = 1
+                        },
+                        new
+                        {
                             CompetitorId = 27,
-                            GameId = 2
+                            GameId = 3
                         },
                         new
                         {
@@ -525,7 +525,7 @@ namespace SportsManagementSystem.Migrations
                         new
                         {
                             CompetitorId = 29,
-                            GameId = 1
+                            GameId = 2
                         });
                 });
 

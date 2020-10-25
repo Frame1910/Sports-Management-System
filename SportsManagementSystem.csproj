@@ -8,8 +8,6 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20201024080631_AddUserType.cs" />
     <Compile Remove="Data\Migrations\20201024080631_AddUserType.Designer.cs" />
-    <Compile Remove="Migrations\20201025040422_SeedCompetitorGames.cs" />
-    <Compile Remove="Migrations\20201025040422_SeedCompetitorGames.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
